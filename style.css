@@ -1,0 +1,342 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #555555;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-border: #e5e7eb;
+  --color-review-bg: #fef9c3;
+  --color-review-text: #854d0e;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --nav-height: 56px;
+  --container-max: 760px;
+  --section-pad-v: 3.5rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 12px);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* ── Navigation ── */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  height: var(--nav-height);
+}
+
+.nav-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-social {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.nav-social a {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.nav-social a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.nav-cv-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* ── Container & Sections ── */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--section-pad-v) 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── About / Hero ── */
+
+.section-about {
+  padding-top: calc(var(--section-pad-v) * 1.4);
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.about-layout {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.about-photo {
+  flex: 0 0 auto;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.about-text {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.hero-title {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* ── Bio ── */
+
+.bio p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.bio p + p {
+  margin-top: 0.9rem;
+}
+
+.contact-line {
+  color: var(--color-text-secondary);
+}
+
+/* ── Publications ── */
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.pub-note {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.pub-badge {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #c026d3;
+  border-radius: 4px;
+  padding: 0.25rem 0.55rem;
+  text-align: center;
+  margin-top: 0.2rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.pub-badge--review {
+  background: #6b7280;
+}
+
+.pub-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.self-author {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.pub-venue-full {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+
+.pub-links {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.pub-btn {
+  display: inline-block;
+  font-size: 0.73rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.pub-btn:hover {
+  border-color: var(--color-text-secondary);
+  background: #f9fafb;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+/* ── Footer ── */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+.site-footer p {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 600px) {
+  :root {
+    --section-pad-v: 2rem;
+  }
+
+  .hero-name {
+    font-size: 1.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .nav-social {
+    gap: 0.85rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .pub-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .pub-badge {
+    width: fit-content;
+    margin-top: 0;
+  }
+}
